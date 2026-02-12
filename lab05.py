@@ -64,13 +64,10 @@ def generate_problem(operation: str, difficulty: int) -> int:
     # eval() returns the solution to your problem.
     int(eval(f"{first_num} {operation} {second_num}"))
 """
-    #TODO: Print the operation and return the solution.
-
-# ---------START CODING HERE----------
 
 print("Welcome to Math Quest! Here you will be challenged by answering increasingly difficult math problems until you decide you have had enough.")
 print('You will be presented with n number math problems at a time. If you get more than half right, we will increase the difficulty. Otherwise, we will lower the difficulty, if possible.')
-
+while 
 print("Would you like to practice addition, subtraction, multiplication, or division?")
 print("Please select either addition, subtraction, multiplication, or division")
 
