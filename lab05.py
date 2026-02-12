@@ -2,7 +2,16 @@
 import random 
 random.seed(256)
 # ------------------------------------
+"""
+Author:         Jason Skipper
+Date:           2/12/26
+Assignment:     Lab 05
+Course:         CPSC1051
+Lab Section:    002
 
+This code 
+
+"""
 def generate_problem(operation: str, difficulty: int) -> int:
     """
     Generates a random math problem (+, -, *, /) based on the given operation and difficulty. The operation is a string that says what operation the problem will be performing.
@@ -15,7 +24,35 @@ def generate_problem(operation: str, difficulty: int) -> int:
     Returns:
         Prints out a random math problem difficulty
     """
+   
+    if operation == "multiplication":
+        operation = "*"
+        first_num = random.randint(1, (10 ** difficulty))
+        second_num = random.randint(1, (10 ** difficulty))
+        print(f"{first_num} {operation} {second_num}")
+        return int(eval(f"{first_num} {operation} {second_num}"))
+    elif operation == "subtraction":
+        operation = "-"
+        first_num = random.randint(1, (10 ** difficulty))
+        second_num = random.randint(1, (10 ** difficulty))
+        print(f"{first_num} {operation} {second_num}")
+        return int(eval(f"{first_num} {operation} {second_num}"))
+    elif operation == "addition":
+        operation = "+"
+        first_num = random.randint(1, (10 ** difficulty))
+        second_num = random.randint(1, (10 ** difficulty))
+        print(f"{first_num} {operation} {second_num}")
+        return int(eval(f"{first_num} {operation} {second_num}"))
+    elif operation == "division":
+        operation = "%"
+        first_num = random.randint(1, (10 ** difficulty))
+        second_num = random.randint(1, (10 ** difficulty))
+        first_num = max([first_num, second_num])
+        second_num = min([first_num, second_num])
+        print(f"{first_num} {operation} {second_num}")
+        return int(eval(f"{first_num} {operation} {second_num}"))
     
+"""
     # This will generate a random first and second number for you to use
     first_num = random.randint(1, (10 ** difficulty))
     second_num = random.randint(1, (10 ** difficulty))
@@ -26,7 +63,7 @@ def generate_problem(operation: str, difficulty: int) -> int:
 
     # eval() returns the solution to your problem.
     int(eval(f"{first_num} {operation} {second_num}"))
-
+"""
     #TODO: Print the operation and return the solution.
 
 # ---------START CODING HERE----------
