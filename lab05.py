@@ -90,10 +90,6 @@ def get_positive(prompt: str) -> int:
 
     return value
 
-def main()
-
-
-
 if __name__ == "__main__":
     print("Welcome to Math Quest! Here you will be challenged by answering increasingly difficult math problems until you decide you have had enough.")
     print("You will be presented with n number math problems at a time. If you get more than half right, we will increase the difficulty. Otherwise, we will lower the difficulty, if possible.")
