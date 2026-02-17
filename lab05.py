@@ -138,3 +138,4 @@ if __name__ == "__main__":
             playing = False
 
     print(f"Congrats! Your final score was {total_correct} out of {total_questions}.", end="")
+    
