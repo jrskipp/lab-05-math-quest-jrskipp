@@ -9,7 +9,7 @@ Assignment:     Lab 05
 Course:         CPSC1051
 Lab Section:    002
 
-This code 
+This code practices math for as long as the user wants with varying difficulty.
 
 """
 def generate_problem(operation: str, difficulty: int) -> int:
@@ -53,6 +53,15 @@ def generate_problem(operation: str, difficulty: int) -> int:
     return first_num // second_num
 
 def get_valid_op() -> str:
+    """
+    Asks the user for an operation and validates the response, repeating if invalid.
+
+    Args:
+        None
+    
+    Returns:
+        Returns the operation if valid.
+    """
     print("Would you like to practice addition, subtraction, multiplication, or division?", end="")
     operation = input().strip()
     print()
@@ -64,6 +73,15 @@ def get_valid_op() -> str:
     return operation
 
 def get_positive(prompt: str) -> int:
+    """
+    Guarantees the rest of the code receives valid inputs (integer, non-negative, not a letter)
+
+    Args:
+        prompt: Message shown to user before they type in input
+    
+    Returns:
+        Positive integer from user
+    """
     print(prompt, end="")
     raw = input().strip()
     print()
@@ -91,14 +109,18 @@ def get_positive(prompt: str) -> int:
     return value
 
 if __name__ == "__main__":
+    
     print("Welcome to Math Quest! Here you will be challenged by answering increasingly difficult math problems until you decide you have had enough.")
     print("You will be presented with n number math problems at a time. If you get more than half right, we will increase the difficulty. Otherwise, we will lower the difficulty, if possible.")
 
+    #Initialize future values
     difficulty = 1
     total_correct = 0
     total_questions = 0
 
     playing = True
+
+    #Main game loop
     while playing:
         operation = get_valid_op()
 
@@ -107,6 +129,8 @@ if __name__ == "__main__":
         print(f"Here are your {num_problems} {operation} problems:")
 
         round_correct = 0
+        
+        #Performs action based on if answer is correct or incorrect
         for _ in range(num_problems):
             answer = generate_problem(operation, difficulty)
             guess = int(input().strip())
@@ -120,6 +144,7 @@ if __name__ == "__main__":
         total_correct += round_correct
         total_questions += num_problems
 
+        #Calculates score and changes difficulty depending on it.
         if round_correct > (num_problems / 2):
             print(f"Your score was {round_correct}/{num_problems}. We will be increasing the difficulty for next time!")
             difficulty += 1
@@ -130,6 +155,7 @@ if __name__ == "__main__":
             else:
                 difficulty -= 1
 
+        #Offers user to quit
         print("Continue? (enter 'quit' to exit)", end="")
         cont = input().strip()
         print()
