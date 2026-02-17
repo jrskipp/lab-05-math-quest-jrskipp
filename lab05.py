@@ -124,12 +124,14 @@ if __name__ == "__main__":
             print(f"Your score was {round_correct}/{num_problems}. We will be increasing the difficulty for next time!")
             difficulty += 1
         else:
-            if difficulty == 1:
+            difficulty -= 1
+
+            if difficulty < 1:
                 print("You are already at the lowest difficulty!")
+                difficulty = 1
             else:
                 print(f"Your score was {round_correct}/{num_problems}. We will be lowering the difficulty for next time.")
-                difficulty -= 1
-
+                
         print("Continue? (enter 'quit' to exit)", end="")
         cont = input().strip()
         print()
@@ -138,4 +140,3 @@ if __name__ == "__main__":
             playing = False
 
     print(f"Congrats! Your final score was {total_correct} out of {total_questions}.", end="")
-    
